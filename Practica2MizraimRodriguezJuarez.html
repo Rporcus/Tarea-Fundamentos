@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica2</title>
+    <h1>Fundamentos JavaScript</h1>
+    <h1>Calculadora basica</h1>
+    <p>Introduce dos números:</p>  
+    <input id="num1"><br>  
+ <input id="num2">  
+ <button type="button" onclick="suma()">Sumar</button>  
+ <p id="sumando"></p>  
+</head>
+<body>
+    <script>
+       
+       //SUMA
+        function suma()
+        {
+         let operador1,operador2,suma,mensaje;  //Declaracion de Variables
+
+         operador1 = document.getElementById("num1").value;  
+         operador2 = document.getElementById("num2").value;  
+         if (isNaN(operador1) || isNaN(operador2)) 
+        
+         {  
+          mensaje =( "valores no válidos ");  
+         } else 
+
+         {  
+          //si no ponemos parseFloat concatenaría operador1 con operador2  
+          suma=parseFloat(operador1)+parseFloat(operador2);  
+          mensaje= suma;  
+         }  
+         document.getElementById("sumando").innerHTML = mensaje;  
+        }
+
+    </script>
+        
+      
+    
+    
+</body>
+</html>
