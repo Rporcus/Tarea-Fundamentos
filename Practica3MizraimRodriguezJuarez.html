@@ -1,42 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practica 3 </title>
+    <title>Practica3</title>
+    <h1>Fundamentos JavaScript</h1>
+    <h1>Calculadora basica 2.0</h1>
+    <p>Introduce dos números:</p>  
+    <input id="num1"><br>  
+ <input id="num2">  
+ <p>Introduce el Operador:</p>  
+ <input id="operador">  
+ <button type="button" onclick="operacion()">Aceptar</button>  
+ <p id="Aceptar"></p>  
 </head>
-    <body> 
-    <h2> <center> Practica 3 Calculadora basica </center></h2>
-
+<body>
     <script>
+       
+       
+       function operacion()
+        {
+         let n1,n2,op,mensaje;  //Declaracion de Variables
 
-    let n1=parseInt(prompt("Introduce un numero"));
-    let op=prompt("Ingresa un Operador","");
-    let n2=parseInt(prompt("Introduce otro numero"));
-    if(op=="+"){
-        let r=n1+n2;
-        alert("El resultado es: "+r);   
-    }else if(op=="-"){
-        r=n1-n2;
-        alert("El resultado es: "+r)
-    }
-    else if(op=="*"){
-        r=n1*n2;
-        alert("El resultado es: "+r)
-    }
-    else if(op=="/"){
-        r=n1/n2;
-        alert("El resultado es: "+r)
-    }
-    else if(op=="%"){
-        r=(n1*n2)/100;
-        alert("El resultado es: "+r)
-    }
+         n1 = document.getElementById("num1").value;  
+
+         n2 = document.getElementById("num2").value;  
+
+         op = document.getElementById("operador").value;
+
+         if (isNaN(n1) || isNaN(n2)) 
+        
+         {  
+          mensaje =( "valores no válidos ");  
+         }
+         else if (op=="+")//suma
+
+         {  
+          //si no ponemos parseFloat concatenaría operador1 con operador2  
+          r=parseFloat(n1)+parseFloat(n2);  
+          mensaje= r;  
+         } 
+         else if(op=="-")//resta
+         {
+            r=parseFloat(n1)-parseFloat(n2);
+            mensaje= r;
+         } 
+         else if (op=="*")//multiplicacion
+         {
+            r=parseFloat(n1)*parseFloat(n2);
+            mensaje= r;
+         }
+         else if (op=="/")//division
+         {
+            r=parseFloat(n1)/parseFloat(n2);
+            mensaje= r;
+         }else if (op=="%")//porcentaje
+         {
+            r=(parseFloat(n1)%parseFloat(n2))/100;
+            mensaje= r;
+         }
+         document.getElementById("Aceptar").innerHTML = mensaje;  
+        }
 
     </script>
-      
         
- </head>   
+      
+    
+    
 </body>
 </html>
