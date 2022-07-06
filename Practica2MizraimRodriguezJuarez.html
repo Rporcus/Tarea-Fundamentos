@@ -19,11 +19,11 @@
        //SUMA
         function operacion()
         {
-         let operador1,operador2,suma,mensaje;  //Declaracion de Variables
+         let n1,n2,suma,mensaje;  //Declaracion de Variables
 
-         operador1 = document.getElementById("num1").value;  
-         operador2 = document.getElementById("num2").value;  
-         if (isNaN(operador1) || isNaN(operador2)) 
+         n1 = document.getElementById("num1").value;  
+         n2 = document.getElementById("num2").value;  
+         if (isNaN(n1) || isNaN(n2)) 
         
          {  
           mensaje =( "valores no válidos ");  
@@ -31,7 +31,7 @@
 
          {  
           //si no ponemos parseFloat concatenaría operador1 con operador2  
-          suma=parseFloat(operador1)+parseFloat(operador2);  
+          suma=parseFloat(n1)+parseFloat(n2);  
           mensaje= suma;  
          }  
          document.getElementById("sumando").innerHTML = mensaje;  
